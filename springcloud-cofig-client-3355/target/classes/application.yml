@@ -1,0 +1,7 @@
+
+#用户级别配置
+spring:
+  application:
+    name: springcloud-cofig-client
+server:
+  port: 3355

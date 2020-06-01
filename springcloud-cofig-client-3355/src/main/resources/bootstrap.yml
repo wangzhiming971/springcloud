@@ -1,0 +1,9 @@
+#系统级别配置
+spring:
+  cloud:
+    config:
+      name: springcloud-eureka #从git上获取资源文件
+      profile: test
+      label: master
+      uri: http://localhost:3344
+

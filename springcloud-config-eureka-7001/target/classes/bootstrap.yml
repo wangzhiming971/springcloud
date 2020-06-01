@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      name: springcloud-eureka
+      label: master
+      profile: dev
+      uri: http://localhost:3344

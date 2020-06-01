@@ -1,0 +1,63 @@
+spring:
+  profiles:
+    active: dev
+---
+server:
+  port: 7001
+#Eureka配置
+eureka:
+  instance:
+    hostname: eureka7001 #Eureka服务器的实例名称
+  client:
+    register-with-eureka: false #表示是否向Eureka注册中心注册自己
+    fetch-registry: false #fetch-registry为false，则表示自己为注册中心
+    service-url:   # 监控页面 this.serviceUrl.put("defaultZone", "http://localhost:8761/eureka/");
+                  #单注册中心如此配置http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://eureka7002:7002/eureka/,http://eureka7003:7003/eureka/
+  server:
+    enable-self-preservation: true #关闭Eureka自我保护机制
+spring:
+  application:
+    name: DeptEurake7001
+  profiles: dev
+ 
+---
+server:
+  port: 7002
+#Eureka配置
+eureka:
+  instance:
+    hostname: eureka7001 #Eureka服务器的实例名称
+  client:
+    register-with-eureka: false #表示是否向Eureka注册中心注册自己
+    fetch-registry: false #fetch-registry为false，则表示自己为注册中心
+    service-url:   # 监控页面 this.serviceUrl.put("defaultZone", "http://localhost:8761/eureka/");
+                  #单注册中心如此配置http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://eureka7002:7002/eureka/,http://eureka7003:7003/eureka/
+  server:
+    enable-self-preservation: true #关闭Eureka自我保护机制
+spring:
+  application:
+    name: DeptEurake7002
+  profiles: test
+  
+---
+server:
+  port: 7001
+#Eureka配置
+eureka:
+  instance:
+    hostname: eureka7003 #Eureka服务器的实例名称
+  client:
+    register-with-eureka: false #表示是否向Eureka注册中心注册自己
+    fetch-registry: false #fetch-registry为false，则表示自己为注册中心
+    service-url:   # 监控页面 this.serviceUrl.put("defaultZone", "http://localhost:8761/eureka/");
+                  #单注册中心如此配置http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://eureka7002:7002/eureka/,http://eureka7003:7003/eureka/
+  server:
+    enable-self-preservation: true #关闭Eureka自我保护机制
+spring:
+  application:
+    name: DeptEurake7003
+  profiles: pro
+    
